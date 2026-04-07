@@ -56,6 +56,31 @@ kable(games_obj$table, digits = 3)
 
 The regression results assess the relationship between the number of games played and defensive rebounds. A positive coefficient suggests that players who participate in more games tend to accumulate more defensive rebounds, which is expected given increased opportunities to play. If the relationship is statistically significant, it indicates a strong association between game participation and defensive performance. However, this relationship should be interpreted cautiously, as the number of games played inherently affects total rebound opportunities.
 
+Graphs (Elements)
+```{r, echo=FALSE}
+knitr::include_graphics("output/box_plot_1.png.png")
+knitr::include_graphics("output/scatter_plot_2.png")
+knitr::include_graphics("output/scatter_plot_3.png")
+```
+
+# Element 1: Position (Pos) and Points Scored (PTS)
+Does the position you play influence the number of points you score in the game per 36 minutes? 
+
+The boxplot illustrates the distribution of points scored per game per 36 minutes across the five NBA positions: Point Guard (PG), Shooting Guard (SG), Small Forward (SF), Power Forward (PF), and Center (C). The differences in scores across positions suggest that offensive role varies significantly by position, with guards typically contributing more points. The spread of each plot shows variability within positions, and outliers indicate players who perform above or below the standard for their role.
+
+
+# Element 2: Age (Age) and Minutes Played (MP) 
+Does age influence the amount of time you spend on the court per 36 minutes? 
+
+The scatterplot examines the relationship between player age and minutes played per 36 minutes. The red linear regression line depicts an overall trend, with the grey confidence interval reflecting projected uncertainty. A positive coefficient would suggest that older players tend to play more minutes, reflecting off of experience and established roles, while a negative coefficient may indicate that younger players are being substituted in more frequently. 
+
+
+# Element 3: Games (G) and Defensive Rebounds (DRB)
+Is there a correlation between the number of games played and the number of defensive rebounds performed per 36 minutes? 
+
+The scatterplot assesses the relationship between the number of games played and defensive rebounds per 36 minutes. A positive coefficient would suggest that players who appear in more games tend to accumulate more defensive rebounds, which reflect both consistency and position. To maintain statistical significance, a meaningful association between participation and defensive performance should be interpreted.
+
+
 Conclusion
 
 In summary, this report provides a structured and reproducible overview of selected relationships within the NBA Player Stats dataset. The analyses demonstrate how statistical methods can be used to explore differences in performance across positions and evaluate associations between player characteristics and outcomes. As additional components, such as visualizations, are developed, they can be seamlessly integrated into this workflow.
