@@ -58,7 +58,7 @@ The regression results assess the relationship between the number of games playe
 
 Graphs (Elements)
 ```{r, echo=FALSE}
-knitr::include_graphics("output/box_plot_1.png.png")
+knitr::include_graphics("output/box_plot_1.png")
 knitr::include_graphics("output/scatter_plot_2.png")
 knitr::include_graphics("output/scatter_plot_3.png")
 ```
