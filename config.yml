@@ -1,6 +1,10 @@
 default:
-  production: FALSE
+  production: TRUE
   
   
-test:
+firsthalf:
+  production: TRUE
+# cutpoint: 
+
+secondhalf:
   production: TRUE

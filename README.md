@@ -1,6 +1,13 @@
 # Report on NBA Statistics
 
-## Report Contents
+**Authors:**  Victoria Chang, Toni Idowu, Shravya Kanchanapally,
+            Ana Ramirez Tovar, Sara Rozengarten
+
+**Course:**   DATA 550
+
+
+## Overview
+
 The final report evaluates 3 elements:
 
 (1) Does the position you play influence the number of points you score in the
@@ -80,7 +87,9 @@ played vs. defensive rebounds per 36 minutes for players.
     `position_pts_anova_results.rds`,
     `position_pts_summary.rds`, `box_plot_1.png`,
     `scatter_plot_2.png`, and `scatter_plot_3.png` in the `output/` folder
-  - 
+  - knits `report.html` which compares points scored by position, relationship
+    between age and time spent playing, and relationship between number of
+    games played and rate of defensive rebounds.
 
 `Makefile`
 
@@ -94,16 +103,31 @@ played vs. defensive rebounds per 36 minutes for players.
 
 `config.yml`
 
-  - X
+  - contains different configurations for report customization
+  - configuration options:
+    - `default`: full dataset
+    - `firsthalf`: cutpoint of players in top half of ranks
+    - `secondhalf`: cutpoint of players in bottom half of ranks
 
 ------------------------------------------------------------------------
 
 
+## Creating the Report
 
-## Compiling the Report
+### Compiling the Report
 
 Run `make all` command in Terminal to create outputs needed for report and to
 compile the final report.
 
 ### Customizing the Report
-(INSERT INFO ON PARAMETERIZATION in config.yml and in 03_render_report.R)
+In your terminal, execute command `export WHICH_CONFIG="name of config"` where
+you replace "name of config" with the name of the configuration in the
+`config.yml` you would like to run based on your data subset of interest.
+Configurations we have included decide on data subset by player rank--see below.
+
+Configuration options include:
+
+  - `default`: full dataset
+  - `firsthalf`: cutpoint of players in top half of ranks
+  - `secondhalf`: cutpoint of players in bottom half of ranks
+
