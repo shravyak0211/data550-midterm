@@ -31,6 +31,34 @@ played vs. defensive rebounds per 36 minutes for players.
 
 ------------------------------------------------------------------------
 
+## Data Description
+Raw data consists of ranking of top NBA players based on per 36-minute
+performance statistics (as of October 30, 2025). The data was sourced from
+www.basketball-reference.com
+
+## Project Structure
+
+├── code/
+
+├── data_raw/
+
+├── data_clean/
+
+├── output/
+
+├── report.Rmd
+
+├── data550-midterm.Rproj
+
+├── README.md
+
+├── Makefile
+
+├── config.yml
+
+└── .gitignore
+
+
 ## Initial code description
 
 `code/Ana_clean_data.R`
@@ -51,7 +79,7 @@ played vs. defensive rebounds per 36 minutes for players.
 
   - loads `ana_clean.csv` and `toni_clean.csv` from `data_clean/` folder
   - combines `ana_clean.csv` and `toni_clean.csv` into one `nba_combined.csv`
-    dataset in the `data_clean/ `folder
+    dataset in the `data_clean/` folder
 
 `code/01_analysis.R`
 
@@ -100,6 +128,8 @@ played vs. defensive rebounds per 36 minutes for players.
     the `/output` folder needed to compile the report
   - `make output/scatter_plot_3.png` will generate 3 `.png` files of a boxplot
     and 2 scatter plots in the `output` folder 
+  - `make clean` will remove all `output` and the `report.html`
+  - `make install` will restore the R package environment to that of lockfile
 
 `config.yml`
 
@@ -111,13 +141,20 @@ played vs. defensive rebounds per 36 minutes for players.
 
 ------------------------------------------------------------------------
 
+## Setting Up
+
+1. Clone the repository:
+`git clone <repo-url>`
+
+2. Navigate to project directory:
+`cd <repo-name>`
+
+3. Install required R packages:
+`make install` 
+
+------------------------------------------------------------------------
 
 ## Creating the Report
-
-### Compiling the Report
-
-Run `make all` command in Terminal to create outputs needed for report and to
-compile the final report.
 
 ### Customizing the Report
 In your terminal, execute command `export WHICH_CONFIG="name of config"` where
@@ -131,3 +168,15 @@ Configuration options include:
   - `firsthalf`: cutpoint of players in top half of ranks
   - `secondhalf`: cutpoint of players in bottom half of ranks
 
+### Compiling the Report
+
+Set the configuration before running `make all`.
+Run `make all` command in Terminal to create outputs needed for report and to
+compile the final report.
+The Makefile automatically runs all scripts in the correct order; manual
+execution is not required.
+
+### Example
+
+`export WHICH_CONFIG=firsthalf`
+`make all`
