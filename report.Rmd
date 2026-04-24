@@ -7,9 +7,11 @@ output: html_document
 
 
 ```{r, read-config, include = FALSE}
-# config_list <- config::get(
-#     config = Sys.getenv("WHICH_CONFIG")
-# )
+
+library(config)
+config_list <- config::get(
+    config = Sys.getenv("WHICH_CONFIG")
+)
 
 ```
 

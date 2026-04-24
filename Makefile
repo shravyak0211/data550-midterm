@@ -1,7 +1,7 @@
 all: report.html
 
 ## This command creates the final report
-report.html: report.Rmd \
+report_config_${WHICH_CONFIG}.html: report.Rmd \
   output/position_pts_anova_results.rds \
   output/position_pts_summary.rds \
   output/age_mins_regression_results.rds \
