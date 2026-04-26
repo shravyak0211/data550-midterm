@@ -4,7 +4,7 @@ library(dplyr)
 here::i_am("code/Ana_clean_data.R")
 
 # Load data
-nba_raw <- read.csv(here("data", "raw_data", "nba_2026-02-27.csv"))
+nba_raw <- read.csv(here("data_raw", "nba_2026-02-27.csv"))
 
 # Rename columns to match codebook
 nba_raw <- nba_raw %>%
@@ -31,14 +31,14 @@ nba_clean <- nba_raw %>%
 nba_clean <- nba_clean %>%
   select(rank, player, age, position, team, games, mins_played, rebounds_defensive, pts)
 
-# Your subset: players 1-281 (by rank)
-ana_clean <- nba_clean %>%
-  filter(rank <= 281)
-
 # Remove rows with any missing values and keep more than 100minutes played
 nba_clean <- nba_clean %>%
   na.omit() %>%
   filter(mins_played >= 100)
 
+# Your subset: players 1-281 (by rank)
+ana_clean <- nba_clean %>%
+  filter(rank <= 281)
+
 # Save clean dataset to merge with Toni's
-write.csv(ana_clean, here("data", "derived_data", "ana_clean.csv"), row.names = FALSE)
+write.csv(ana_clean, here("data_clean", "ana_clean.csv"), row.names = FALSE)
